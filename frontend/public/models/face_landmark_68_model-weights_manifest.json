@@ -492,6 +492,6 @@
         }
       }
     ],
-    "paths": ["face_landmark_68_model.bin"]
+    "paths": ["face_landmark_68_model-shard1"]
   }
 ]

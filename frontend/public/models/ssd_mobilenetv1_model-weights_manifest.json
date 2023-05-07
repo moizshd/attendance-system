@@ -1,5 +1,6 @@
 [
   {
+    "paths": ["ssd_mobilenetv1_model-shard1", "ssd_mobilenetv1_model-shard2"],
     "weights": [
       {
         "dtype": "float32",
@@ -1442,7 +1443,6 @@
         "name": "Prediction/BoxPredictor_0/stack/3"
       },
       { "dtype": "float32", "shape": [1, 5118, 4], "name": "Output/extra_dim" }
-    ],
-    "paths": ["ssd_mobilenetv1_model.bin"]
+    ]
   }
 ]

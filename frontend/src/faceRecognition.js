@@ -1,9 +1,16 @@
 import * as faceapi from '@vladmandic/face-api';
+// import ssdModel from './models/ssd_mobilenetv1_model-weights_manifest.json';
+// import landmarkModel from './models/face_landmark_68_model-weights_manifest.json';
+// import landmarkTinyModel from './models/face_landmark_68_tiny_model-weights_manifest.json';
+// import recognitionModel from './models/face_recognition_model-weights_manifest.json';
+
 // Load the required models
 export async function loadModels() {
-    await faceapi.loadSsdMobilenetv1Model(`${process.env.PUBLIC_URL}/models`);
-    await faceapi.loadFaceLandmarkModel(`${process.env.PUBLIC_URL}/models`);
-    await faceapi.loadFaceRecognitionModel(`${process.env.PUBLIC_URL}/models`);
+    const MODEL_URL = process.env.PUBLIC_URL + "/models";
+    await faceapi.loadSsdMobilenetv1Model(MODEL_URL);
+    await faceapi.loadFaceLandmarkModel(MODEL_URL);
+    await faceapi.loadFaceLandmarkTinyModel(MODEL_URL);
+    await faceapi.loadFaceRecognitionModel(MODEL_URL);
 }
 
 
