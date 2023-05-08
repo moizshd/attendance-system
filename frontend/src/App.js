@@ -1,19 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import { Container, AppBar, Typography, Box } from '@mui/material';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Container } from '@mui/material';
 import Register from './components/Register';
 import Attendance from './components/Attendance';
+import CustomAppBar from './components/CustomAppBar';
+import HomePage from './components/HomePage';
+
 function App() {
   return (
-    <Container>
-      <AppBar position="static">
-        <Box sx={{ p: 2 }}>
-          <Typography variant="h6">MERN Attendance System</Typography>
-        </Box>
-      </AppBar>
-      <Register />
-      <Attendance />
-    </Container>
+    <Router>
+      <div>
+        <CustomAppBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/attendance" element={<Attendance />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
